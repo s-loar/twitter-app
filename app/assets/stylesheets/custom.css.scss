@@ -1,0 +1,29 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  padding-top: 80px;
+  color: #000;
+  background: #e1e1e1;
+}
+
+// Navbar styling
+.navbar {
+ background: #343A3D;
+ padding-bottom: 20px;
+}
+
+.navbar-default .navbar-brand {
+  padding-top: 25px;
+  font-size: 150%;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #fff;
+}
+
+.navbar-default {
+  border: #64103F;
+}
