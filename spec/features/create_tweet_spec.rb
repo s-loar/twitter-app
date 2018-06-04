@@ -5,7 +5,7 @@ RSpec.feature "Creating Tweets" do
     visit "/"
     click_link "New Tweet"
     fill_in "Body", with: "Lorem Ipsum"
-    click_button "Tweet"
+    click_button "Post"
 
     expect(page).to have_content("Tweet has been posted")
     expect(page.current_path).to eq(tweets_path)
