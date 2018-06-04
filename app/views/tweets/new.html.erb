@@ -6,10 +6,10 @@
   <%= form_for( @tweet, :html => {class: "form-horizontal", role: "form"} ) do |f| %>
     <div class="form-group">
       <div class="control-label col-md-1">
-        <%= f.label :Tweet %>
+        <%= f.label :body %>
       </div>
       <div class="col-md-11">
-        <%= f.text_area :body, rows: 10, class: 'form-control', placeholder: 'Body of Tweet' %>
+        <%= f.text_area :body, rows: 10, class: 'form-control', placeholder: 'Body of Tweet', autofocus: true %>
       </div>
     </div>
 
