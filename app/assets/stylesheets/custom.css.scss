@@ -7,7 +7,6 @@ body {
   background: #e1e1e1;
 }
 
-// Navbar styling
 .navbar {
  background: #343A3D;
  padding-bottom: 20px;
@@ -39,9 +38,22 @@ body {
   color: #fff;
 }
 
-// Form styling
 .page-heading, div > label {
   color: #000;
 }
 
+.tweet-body {
+  white-space: pre-line;
+  font-size: 1.5em;
+  padding-left: 1.2em;
+}
 
+.author {
+  color: #343A3D;
+  padding-left: 25px;
+}
+
+.tweet-detail {
+  margin-top: 20px;
+  color: #000;
+}
