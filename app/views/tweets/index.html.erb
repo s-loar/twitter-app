@@ -1,1 +1,11 @@
-<%= link_to "New Tweet", new_tweet_path %>
+<%= link_to "New Tweet", new_tweet_path, class: "btn btn-default btn-lg", id: "new-tweet-btn" %>
+
+<% if @tweets %>
+  <% @tweets.each do |tweet| %>
+    <div class="well well-lg">
+      <div class="tweet-body">
+        <%= link_to tweet.body, tweet_path(tweet) %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
