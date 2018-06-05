@@ -24,7 +24,24 @@ body {
   color: #fff;
 }
 
-// .navbar-default {
-//   border: rgb(54, 54, 54);
-// }
+.navbar-nav {
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.navbar-default .navbar-nav li > a {
+  font-weight: bold;
+  font-size: 130%;
+  color: #fff;
+}
+
+.navbar-default .navbar-nav li > a:hover {
+  color: #fff;
+}
+
+// Form styling
+.page-heading, div > label {
+  color: #000;
+}
+
 
