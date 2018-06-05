@@ -1,0 +1,10 @@
+<article class="detail-tweet">
+
+  <div class="tweet-body">
+    <%= @tweet.body %>
+  </div>
+  <div class="glyphicon glyphicon-calender" id="tweet-date">
+    <%= @tweet.created_at.strftime("%b %d %Y") %>
+  </div>
+
+</article>

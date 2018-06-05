@@ -7,6 +7,9 @@
     <div class="well well-lg">
       <div class="tweet-body">
         <%= link_to tweet.body, tweet_path(tweet) %>
+        <div class="glyphicon glyphicon-calender" id="tweet-date">
+          <%= tweet.created_at.strftime("%b %d %Y") %>
+        </div>
       </div>
     </div>
   <% end %>
