@@ -4,17 +4,35 @@
   <div class="col-md-12">
 
   <%= form_for( @tweet, :html => {class: "form-horizontal", role: "form"} ) do |f| %>
+    <% if @tweet.errors.any? %>
+      <div class="panel panel-danger col-md-offset-1">
+        <div class="panel-heading">
+          <h2 class="panel-title">
+            <%= pluralize(@tweet.errors.count, "error") %>
+            prohibited this tweet from being posted:
+          </h2>
+          <div class="panel-body">
+            <ul>
+              <% @tweet.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
     <div class="form-group">
       <div class="control-label col-md-offset-1 col-md-1">
         <%= f.label :body %>
       </div>
-      <div class="col-md-3">
-        <%= f.text_area :body, rows: 5, class: 'form-control', placeholder: 'Body of Tweet', autofocus: true %>
+      <div class="col-md-5">
+        <%= f.text_area :body, rows: 3, class: 'form-control', maxlength: 280, placeholder: 'Body of Tweet', autofocus: true %>
       </div>
     </div>
 
     <div class="form-group">
-      <div class="col-md-offset-2 col-md-3">
+      <div class="col-md-offset-2 col-md-5">
         <%= f.submit "Post", class: 'btn btn-primary btn-lg pull-right' %>
       </div>
     </div>
