@@ -45,7 +45,18 @@ body {
 .tweet-body {
   white-space: pre-line;
   font-size: 1.5em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.tweet-body a, .tweet-body a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+#tweet-date {
   padding-left: 1.2em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
 }
 
 .author {
@@ -56,4 +67,15 @@ body {
 .tweet-detail {
   margin-top: 20px;
   color: #000;
+}
+
+.tweet-detail-title {
+  font-size: 3em;
+  margin-bottom: 40px;
+}
+
+.tweet-show-body {
+  font-size: 1.5em;
+  padding-left: 0em;
+  margin-top: 15px;
 }

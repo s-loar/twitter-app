@@ -18,6 +18,18 @@ class TweetsController < ApplicationController
     end
   end
 
+  def show
+    @tweet = Tweet.find(params[:id])
+  end
+
+  protected
+
+    def resource_not_found
+      message = "The tweet you are looking for could not be found"
+      flash[:alert] = message
+      redirect_to root_path
+    end
+
   private
 
     def tweet_params
