@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [ :show, :edit, :update, :destroy ]
-  # before_action :authenticate_user!, except: [ :show, :index ]
+  before_action :authenticate_user!, except: [ :show, :index ]
 
   def index
     @tweets = Tweet.all
@@ -12,6 +12,7 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(tweet_params)
+    @tweet.user = current_user
     if @tweet.save
       flash[:success] = "Tweet has been posted"
       redirect_to tweets_path
