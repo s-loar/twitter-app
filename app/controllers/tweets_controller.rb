@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  # before_action :set_tweet, only: [ :show, :edit, :update ]
+  before_action :set_tweet, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @tweets = Tweet.all
@@ -21,21 +21,25 @@ class TweetsController < ApplicationController
   end
 
   def show
-    @tweet = Tweet.find(params[:id])
   end
 
   def edit
-    @tweet = Tweet.find(params[:id])
   end
 
   def update
-    @tweet = Tweet.find(params[:id])
     if @tweet.update(tweet_params)
       flash[:success] = "Tweet has been updated"
       redirect_to @tweet
     else
       flash.now[:danger] = "Tweet has not been updated"
       render :edit
+    end
+  end
+
+  def destroy
+    if @tweet.destroy
+      flash[:success] = "Tweet has been deleted."
+      redirect_to tweets_path
     end
   end
 
