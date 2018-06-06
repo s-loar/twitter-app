@@ -3,18 +3,16 @@ Twitter clone in Rails
 
 * Ruby version: 2.4.1p111
 
-* System dependencies
+* Create, Edit and Delete Tweets
 
-* Configuration
+* Users sign up, sign in, sign out
 
-* Database creation
+* Users comment on other users' tweets
 
-* Database initialization
+* Users follow other users
 
-* How to run the test suite
+* Main screen shows feed of user's and their followed users' tweets
 
-* Services (job queues, cache servers, search engines, etc.)
+* Deploy to Heroku
 
-* Deployment instructions
 
-* ...
