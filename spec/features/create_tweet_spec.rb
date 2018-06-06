@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.feature "Creating Tweets" do
+
+  # before do
+  #   @jake = User.create!(email: "jake@example.com", password: "password")
+  #   login_as(@jake)
+  # end
+
   scenario "A user posts a new tweet" do
     visit "/"
     click_link "New Tweet"
