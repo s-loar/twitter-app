@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  # before_action :set_tweet, only: [ :show, :edit, :update ]
+  before_action :set_tweet, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @tweets = Tweet.all
@@ -21,15 +21,12 @@ class TweetsController < ApplicationController
   end
 
   def show
-    @tweet = Tweet.find(params[:id])
   end
 
   def edit
-    @tweet = Tweet.find(params[:id])
   end
 
   def update
-    @tweet = Tweet.find(params[:id])
     if @tweet.update(tweet_params)
       flash[:success] = "Tweet has been updated"
       redirect_to @tweet
@@ -39,11 +36,17 @@ class TweetsController < ApplicationController
     end
   end
 
+  def destroy
+    if @tweet.destroy
+      flash[:success] = "Tweet has been deleted."
+      redirect_to tweets_path
+    end
+  end
+
   protected
 
     def resource_not_found
-      message = "The tweet you are looking for could not be found"
-      flash[:alert] = message
+      flash[:alert] = "The tweet you are looking for could not be found"
       redirect_to root_path
     end
 
