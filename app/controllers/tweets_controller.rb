@@ -46,8 +46,7 @@ class TweetsController < ApplicationController
   protected
 
     def resource_not_found
-      message = "The tweet you are looking for could not be found"
-      flash[:alert] = message
+      flash[:alert] = "The tweet you are looking for could not be found"
       redirect_to root_path
     end
 
