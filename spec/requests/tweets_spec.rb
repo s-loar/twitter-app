@@ -1,9 +1,10 @@
 require "rails_helper"
 
-RSpec.describe "Articles", type: :request do
+RSpec.describe "Tweets", type: :request do
 
   before do
-    @tweet = Tweet.create!(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+    @jake = User.create!(email: "jake@example.com", password: "password")
+    @tweet = Tweet.create!(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", user: @jake)
   end
 
   describe 'GET /tweets/:id' do

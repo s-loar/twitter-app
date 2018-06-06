@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "List Tweets" do
   before do
-    @tweet1 = Tweet.create(body: "First Tweet")
-    @tweet2 = Tweet.create(body: "Second Tweet")
+    @jake = User.create!(email: "jake@example.com", password: "password")
+    @tweet1 = Tweet.create(body: "First Tweet", user: @jake)
+    @tweet2 = Tweet.create(body: "Second Tweet", user: @jake)
   end
 
   scenario "User lists all tweets" do

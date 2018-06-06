@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.feature "Show a Tweet" do
 
   before do
-    @tweet = Tweet.create(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+    @jake = User.create!(email: "jake@example.com", password: "password")
+    @tweet = Tweet.create(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", user: @jake)
   end
 
   scenario "to show a tweet" do
