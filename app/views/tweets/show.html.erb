@@ -7,4 +7,8 @@
     <%= @tweet.created_at.strftime("%b %d %Y") %>
   </div>
 
+  <div class="edit-delete">
+      <%= link_to "Edit Tweet", edit_tweet_path(@tweet), class: "btn btn-primary btn-lg btn-space" %>
+    </div>
+
 </article>
