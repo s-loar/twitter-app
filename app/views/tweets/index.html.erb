@@ -9,9 +9,11 @@
     <div class="well well-lg">
       <div class="tweet-body">
         <%= link_to tweet.body, tweet_path(tweet) %>
-        <div class="tweet-date">
-          <%= tweet.created_at.strftime("%b %d %Y") %>
-        </div>
+      </div>
+      <div class="author">
+        <small>
+          Created by: <%= tweet.user.email %> <%= tweet.created_at.strftime("%b %d %Y") %>
+        </small>
       </div>
     </div>
   <% end %>
