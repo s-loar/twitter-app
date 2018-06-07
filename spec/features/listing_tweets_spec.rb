@@ -7,13 +7,25 @@ RSpec.feature "List Tweets" do
     @tweet2 = Tweet.create(body: "Second Tweet", user: @jake)
   end
 
-  scenario "User lists all tweets" do
+  scenario "User lists all tweets and is signed in" do
+    login_as(@jake)
     visit "/"
 
     expect(page).to have_content(@tweet1.body)
     expect(page).to have_link(@tweet1.body)
     expect(page).to have_content(@tweet2.body)
     expect(page).to have_link(@tweet2.body)
+    expect(page).to have_link("New Tweet")
+  end
+
+  scenario "User lists all tweets and is not signed in" do
+    visit "/"
+
+    expect(page).to have_content(@tweet1.body)
+    expect(page).to have_link(@tweet1.body)
+    expect(page).to have_content(@tweet2.body)
+    expect(page).to have_link(@tweet2.body)
+    expect(page).not_to have_link("New Tweet")
   end
 
   scenario "No tweets to list" do
