@@ -23,6 +23,8 @@ class TweetsController < ApplicationController
   end
 
   def show
+    @comment = @tweet.comments.build # for the new one
+    @comments = @tweet.comments
   end
 
   def edit
