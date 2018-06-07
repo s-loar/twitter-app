@@ -26,22 +26,36 @@ class TweetsController < ApplicationController
   end
 
   def edit
+    unless @tweet.user == current_user
+      flash[:alert] = "You can only edit your own tweets."
+      redirect_to root_path
+    end
   end
 
   def update
-    if @tweet.update(tweet_params)
-      flash[:success] = "Tweet has been updated"
-      redirect_to @tweet
+    unless @tweet.user == current_user
+      flash[:alert] = "You can only edit your own tweets."
+      redirect_to root_path
     else
-      flash.now[:danger] = "Tweet has not been updated"
-      render :edit
+      if @tweet.update(tweet_params)
+        flash[:success] = "Tweet has been updated"
+        redirect_to @tweet
+      else
+        flash.now[:danger] = "Tweet has not been updated"
+        render :edit
+      end
     end
   end
 
   def destroy
-    if @tweet.destroy
-      flash[:success] = "Tweet has been deleted."
-      redirect_to tweets_path
+    unless @tweet.user == current_user
+      flash[:alert] = "You can only delete your own tweets."
+      redirect_to root_path
+    else
+      if @tweet.destroy
+        flash[:success] = "Tweet has been deleted."
+        redirect_to tweets_path
+      end
     end
   end
 
