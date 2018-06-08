@@ -1,6 +1,6 @@
 <div class="row">
   <div class="well well-lg">
-    <div class="col-md-12">
+    <div class="row">
       <div class="col-md-4">
         <%= user.name %>
       </div>
@@ -8,7 +8,7 @@
         <%= pluralize(user.tweets.count, "tweet") %> posted
       </div>
       <div class="col-md-4">
-        <span class='pull-right'>Btn</span>
+        <button type="button" class="btn btn-primary follow-btn pull-right" data-dismiss="modal" data-id="<%= user.id %>">Follow</button>
       </div>
     </div>
   </div>
