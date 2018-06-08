@@ -3,8 +3,8 @@ require "rails_helper"
 RSpec.describe "Tweets", type: :request do
 
   before do
-    @jake = User.create!(email: "jake@example.com", password: "password")
-    @sally = User.create!(email: "sally@example.com", password: "password")
+    @jake = User.create!(email: "jake@example.com", password: "password", name: "Jake")
+    @sally = User.create!(email: "sally@example.com", password: "password", name: "Sally")
     @tweet = Tweet.create!(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", user: @jake)
   end
 

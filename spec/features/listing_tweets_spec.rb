@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "List Tweets" do
   before do
-    @jake = User.create!(email: "jake@example.com", password: "password")
+    @jake = User.create!(email: "jake@example.com", password: "password", name: "Jake")
     @tweet1 = Tweet.create(body: "First Tweet", user: @jake)
     @tweet2 = Tweet.create(body: "Second Tweet", user: @jake)
   end
