@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Edit Tweet" do
   before do
-    @jake = User.create!(email: "jake@example.com", password: "password")
+    @jake = User.create!(email: "jake@example.com", password: "password", name: "Jake")
     login_as(@jake)
     @tweet = Tweet.create(body: "First Tweet", user: @jake)
   end
