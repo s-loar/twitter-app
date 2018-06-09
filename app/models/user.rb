@@ -11,4 +11,14 @@ class User < ApplicationRecord
 
   default_scope { order(name: :asc) }
 
+  def following?(other_user)
+    true
+  end
+
+  def follow(other_user)
+  end
+
+  def unfollow(other_user)
+  end
+
 end
