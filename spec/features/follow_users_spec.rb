@@ -10,11 +10,15 @@ RSpec.feature "Follow Users" do
   scenario "permits a signed in user to follow another user" do
     visit '/'
     click_link 'Follow'
-
     expect(page).to have_content(@jake.name)
     expect(page).to have_button("Follow")
+  end
 
-    click_button("Follow")
-    expect(page).to_not have_button("Follow")
+  scenario "permits a signed in user to unfollow another user" do
+    @sally.follow(@jake)
+    visit '/'
+    click_link 'Follow'
+    expect(page).to have_content(@jake.name)
+    expect(page).to have_button("Unfollow")
   end
 end

@@ -1,6 +1,7 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
+  // $(document).ready(function(){
   $("#toggle-followers").on('click', '.follow-btn', function(e) {
-    var followed_id = this.dataset.id;
+    var other_user_id = this.dataset.id;
     var btn_id = "#" + this.id;
 
     $.ajax({
@@ -8,15 +9,18 @@ $(document).ready(function(){
       type: 'post',
       dataType: "json",
       data: {
-        followed_id: followed_id
+        other_user_id: other_user_id
       },
       success: function(data){
-        alert(data.message);
-        $(btn_id).hide();
+        if ($(btn_id).html() == 'Follow') {
+          $(btn_id).html('Unfollow');
+        } else {
+          $(btn_id).html('Follow');
+        }
       },
       error: function(return_value){
         console.log(return_value);
-        alert("Failed to follow.");
+        alert("Action Failed.");
       }
     });
   });

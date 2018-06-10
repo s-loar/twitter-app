@@ -8,7 +8,8 @@
         <%= pluralize(user.tweets.count, "tweet") %> posted
       </div>
       <div class="col-md-4">
-        <button type="button" id="follow-<%= user.id %>" class="btn btn-primary follow-btn pull-right" data-dismiss="modal" data-id="<%= user.id %>">Follow</button>
+        <% btn_value = current_user.following?(user) ? "Unfollow" : "Follow" %>
+        <button type="button" id="follow-<%= user.id %>" class="follow-btn btn btn-primary pull-right" data-dismiss="modal" data-id="<%= user.id %>"><%= btn_value %></button>
       </div>
     </div>
   </div>

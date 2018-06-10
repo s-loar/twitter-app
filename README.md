@@ -11,7 +11,9 @@ Twitter clone in Rails
 
 * Users follow other users
 
-* Main screen shows feed of user's and their followed users' tweets
+* Users unfollow other users
+
+* Main screen shows integrated feed of user's and their followed users' tweets
 
 * Deploy to Heroku
 

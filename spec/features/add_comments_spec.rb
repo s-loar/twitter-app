@@ -6,6 +6,7 @@ RSpec.feature "Add Comments to Tweets" do
     @jake = User.create!(email: "jake@example.com", password: "password", name: "Jake")
     @sally = User.create!(email: "sally@example.com", password: "password", name: "Sally")
     @tweet = Tweet.create(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", user: @jake)
+    @sally.follow(@jake)
   end
 
   scenario "permits a signed in user to make a comment" do
