@@ -1,0 +1,11 @@
+<h3 class="text-center">Who To Follow/Unfollow</h3>
+
+<% if @users.empty? %>
+  <h1 id="no-user">No Users to Follow</h1>
+<% else %>
+  <div id="toggle-followers">
+    <% @users.each do |user| %>
+      <%= render "user", { :user => user } %>
+    <% end %>
+  </div>
+<% end %>

@@ -3,7 +3,9 @@ class TweetsController < ApplicationController
   before_action :authenticate_user!, except: [ :show, :index ]
 
   def index
-    @tweets = Tweet.all
+    if current_user
+      @tweets = current_user.twitter_feed
+    end
   end
 
   def new

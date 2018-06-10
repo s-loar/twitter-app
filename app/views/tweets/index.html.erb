@@ -2,9 +2,8 @@
   <%= link_to "New Tweet", new_tweet_path, class: "btn btn-default btn-lg", id: "new-tweet-btn" %>
 <% end %>
 
-<% if @tweets.empty? %>
-  <h1 id="no-tweets">No Tweets Posted</h1>
-<% else %>
+<% if @tweets %>
+  <h1 id="no-tweets">Your Feed</h1>
   <% @tweets.each do |tweet| %>
     <div class="well well-lg">
       <div class="tweet-body">
@@ -12,9 +11,12 @@
       </div>
       <div class="author">
         <small>
-          Created by: <%= tweet.user.email %> on <%= tweet.created_at.strftime("%b %d %Y") %>
+          Created by: <%= tweet.user.name %> (<%= tweet.user.email %>) on <%= tweet.created_at.strftime("%b %d %Y") %>
         </small>
       </div>
     </div>
   <% end %>
+<% else %>
+  <h1 id="no-tweets">No Tweets in Your Feed</h1>
+  <p>Create a tweet and follow others<p>
 <% end %>

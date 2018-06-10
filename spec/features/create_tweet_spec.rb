@@ -16,7 +16,7 @@ RSpec.feature "Creating Tweets" do
     expect(Tweet.last.user).to eq(@jake)
     expect(page).to have_content("Tweet has been posted")
     expect(page.current_path).to eq(tweets_path)
-    expect(page).to have_content("Created by: #{@jake.email}")
+    expect(page).to have_content("Created by: #{@jake.name} (#{@jake.email})")
   end
 
   scenario "A user fails to post a new tweet" do

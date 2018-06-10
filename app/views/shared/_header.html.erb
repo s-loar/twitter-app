@@ -12,6 +12,7 @@
       <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
+          <li><%= link_to "Follow", relationships_path %></li>
             <p class="navbar-text">
               Signed in as <%= "#{current_user.email}" %>
             </p>
