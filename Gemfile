@@ -41,6 +41,7 @@ gem 'devise', '~> 4.4', '>= 4.4.3'
 # gem 'capistrano-rails', group: :development
 
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'socialization', '~> 1.2'
 
 group :development, :test do
   gem 'sqlite3'

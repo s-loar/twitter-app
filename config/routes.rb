@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'relationships', to: 'relationships#index'
   post 'relationships', to: 'relationships#toggle_relationship'
 
+  post 'tweets/:id/likes', to: 'tweets#likes', as: :likes
+
   resources :tweets do
     resources :comments
   end
