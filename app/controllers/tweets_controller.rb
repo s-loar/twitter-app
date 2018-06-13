@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
 
   def index
     if current_user
-      @tweets = current_user.twitter_feed
+      @tweets = current_user.twitter_feed.paginate(:page => params[:page], :per_page => 3)
     end
   end
 

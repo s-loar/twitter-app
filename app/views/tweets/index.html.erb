@@ -4,6 +4,7 @@
 
 <% if @tweets %>
   <h1 id="no-tweets">Your Feed</h1>
+  <%= will_paginate @tweets %>
   <% @tweets.each do |tweet| %>
     <div class="well well-lg">
       <div class="tweet-body">
@@ -16,6 +17,7 @@
       </div>
     </div>
   <% end %>
+  <%= will_paginate @tweets %>
 <% else %>
   <h1 id="no-tweets">No Tweets in Your Feed</h1>
   <p>Create a tweet and follow others<p>
