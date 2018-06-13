@@ -7,7 +7,6 @@ RSpec.feature "List Tweets" do
     @tweet3 = Tweet.create(body: "Third Tweet", user: @jake)
     @tweet4 = Tweet.create(body: "Fourth Tweet", user: @jake)
     @tweet1 = Tweet.create(body: "First Tweet", user: @jake)
-
     @tweet2 = Tweet.create(body: "Second Tweet", user: @jake)
     @tweet6 = Tweet.create(body: "Sally Tweet", user: @sally)
   end

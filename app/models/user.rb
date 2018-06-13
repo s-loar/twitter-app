@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :following, through: :following_relationships, source: :followed
   has_many :followers, through: :followers_relationships, source: :follower
 
+  acts_as_liker
+
   def following?(other_user)
     following.include?(other_user)
   end
