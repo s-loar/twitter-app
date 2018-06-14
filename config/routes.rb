@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'relationships', to: 'relationships#toggle_relationship'
 
   post 'tweets/:id/likes', to: 'tweets#likes', as: :likes
+  delete 'tweets/:id/likes', to: 'tweets#undo_likes', as: :undo_likes
 
   resources :tweets do
     resources :comments
