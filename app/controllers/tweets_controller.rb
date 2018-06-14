@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: [ :show, :edit, :update, :destroy, :likes ]
+  before_action :set_tweet, only: [ :show, :edit, :update, :destroy, :likes, :undo_likes ]
   before_action :authenticate_user!, except: [ :show, :index ]
 
   def index
@@ -66,6 +66,12 @@ class TweetsController < ApplicationController
   def likes
     current_user.like!(@tweet)
     flash[:success] = "Tweet has been Liked"
+    redirect_to root_path
+  end
+
+  def undo_likes
+    current_user.unlike!(@tweet)
+    flash[:success] = "Tweet has been unliked"
     redirect_to root_path
   end
 

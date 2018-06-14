@@ -19,7 +19,11 @@
         <%= tweet.likers_count %> Likes
       </div>
       <div class="pull-right">
-        <%= link_to 'Like', likes_path(tweet), :method => :post, :class => 'btn btn-primary btn-xs' %>
+        <% if tweet.liked_by?(current_user) %>
+          <%= link_to 'Undo like', undo_likes_path(tweet), :method => :delete, :class => 'btn btn-primary btn-xs' %>
+        <% else %>
+          <%= link_to 'Like', likes_path(tweet), :method => :post, :class => 'btn btn-primary btn-xs' %>
+        <% end %>
       </div>
     </div>
   <% end %>
